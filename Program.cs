@@ -168,7 +168,7 @@ namespace AlgebraZadaci
                   }*/
 
                 //4
-                ArrayList polaznici = new ArrayList();
+                
             /* polaznici.Add("Pero");
              polaznici.Add("Petar");
              polaznici.Add("Marko");
@@ -179,18 +179,55 @@ namespace AlgebraZadaci
              polaznici.Add("Mara");
              polaznici.Add("Bubamara");
              polaznici.Add("Ivanka");*/
+            ArrayList polaznici = new ArrayList();
+            //unos imena polaznika
             for (int i = 1; i < 10; i++)
             {
                 Console.WriteLine("Upiši ime {0} polaznika: ",i);
                 polaznici.Add(Console.ReadLine());
             }
-            {
+            //koliko sad ima polaznika
                 Console.WriteLine("Imamo {0} polaznika u seminaru, a polaznici su: ", polaznici.Count);
-
+            //Prolazimo kroz sve polaznike i gledamo dali su prisutni
                 for (int i = 0; i < polaznici.Count; i++)
                 {
-                    Console.WriteLine(polaznici[i]);
+                    Console.WriteLine("Jeli {0} prisutna?",polaznici[i]);
+                var polaznik=polaznici[i];
+                    ConsoleKeyInfo van = Console.ReadKey();
+                    if (van.Key == ConsoleKey.F)//ako nisu kliknemo f false i izbriše ih
+                    {
+                        polaznici.Remove(polaznik);
+                    //polaznici.RemoceAt(i);
+                    /*Brišemo Marka u svakoj
+                     * Standard     ReamoveAt(i)     Remove(obj)    
+                     1 Marko        Ivana             -----  
+                     2 Ivana        Pero             Ivana   
+                     3 pero                          Pero   
+                     */
+                    }
                 }
+             //ponovno koliko ih ima
+                Console.WriteLine("Imamo {0} polaznika u seminaru, a prisutni polaznici su: ", polaznici.Count);
+            //ispis prisutnih
+                for (int i = 0; i < polaznici.Count; i++)
+                {
+                    Console.Write( polaznici[i]+", ");
+                    
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 //5 radi
                 /*int ocjna = 0;
@@ -210,7 +247,7 @@ namespace AlgebraZadaci
 
 
 
-            }
+            
         }
     }
 }
