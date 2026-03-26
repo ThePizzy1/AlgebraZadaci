@@ -129,46 +129,46 @@ namespace AlgebraZadaci
                 }
                 }*/
             //2
-           /* string niz="";
-            Console.WriteLine("Upiši niz znakova: ");
-            niz= Console.ReadLine();
-            string nizRjeci = "Ovo je nes";
-            int brojPonavljanja = 0;
-            int brojZnakova = nizRjeci.Length;
-            for (int i = 0; i <= brojZnakova; i++)
-            {
-                if(nizRjeci.Substring(i, brojZnakova.Len))
-            }*/
+            /* string niz="";
+             Console.WriteLine("Upiši niz znakova: ");
+             niz= Console.ReadLine();
+             string nizRjeci = "Ovo je nes";
+             int brojPonavljanja = 0;
+             int brojZnakova = nizRjeci.Length;
+             for (int i = 0; i <= brojZnakova; i++)
+             {
+                 if(nizRjeci.Substring(i, brojZnakova.Len))
+             }*/
 
             //3 radi
-                /*  Console.WriteLine("Upiši korisničko ime: ");
-                  string korisnickoIme = Console.ReadLine();
-                  Console.WriteLine("Upiši lozinku: ");
-                  string lozinka = Console.ReadLine();
+            /*  Console.WriteLine("Upiši korisničko ime: ");
+              string korisnickoIme = Console.ReadLine();
+              Console.WriteLine("Upiši lozinku: ");
+              string lozinka = Console.ReadLine();
 
-                  //zapravo dva prolaza kroz petlju ali pita tri puta
-                  for(int i = 1; i <3; i++)
+              //zapravo dva prolaza kroz petlju ali pita tri puta
+              for(int i = 1; i <3; i++)
+              {
+                  if(korisnickoIme=="iva" && lozinka=="12345")
                   {
-                      if(korisnickoIme=="iva" && lozinka=="12345")
-                      {
-                          Console.WriteLine("Logirani!!");
-                          break;
-                      }
-                      else
-                      {
+                      Console.WriteLine("Logirani!!");
+                      break;
+                  }
+                  else
+                  {
 
-                          Console.WriteLine("Greška!!");
+                      Console.WriteLine("Greška!!");
 
-                          Console.WriteLine("Upiši korisničko ime: ");
-                          korisnickoIme = Console.ReadLine();
-                          Console.WriteLine("Upiši lozinku: ");
-                          lozinka = Console.ReadLine();
+                      Console.WriteLine("Upiši korisničko ime: ");
+                      korisnickoIme = Console.ReadLine();
+                      Console.WriteLine("Upiši lozinku: ");
+                      lozinka = Console.ReadLine();
 
-                      }
-                  }*/
+                  }
+              }*/
 
-                //4
-                
+            //4
+
             /* polaznici.Add("Pero");
              polaznici.Add("Petar");
              polaznici.Add("Marko");
@@ -179,75 +179,148 @@ namespace AlgebraZadaci
              polaznici.Add("Mara");
              polaznici.Add("Bubamara");
              polaznici.Add("Ivanka");*/
-            ArrayList polaznici = new ArrayList();
-            //unos imena polaznika
-            for (int i = 1; i < 10; i++)
+            /*  ArrayList polaznici = new ArrayList();
+              //unos imena polaznika
+              for (int i = 1; i < 10; i++)
+              {
+                  Console.WriteLine("Upiši ime {0} polaznika: ",i);
+                  polaznici.Add(Console.ReadLine());
+              }
+              //koliko sad ima polaznika
+                  Console.WriteLine("Imamo {0} polaznika u seminaru, a polaznici su: ", polaznici.Count);
+              //Prolazimo kroz sve polaznike i gledamo dali su prisutni
+                  for (int i = 0; i < polaznici.Count; i++)
+                  {
+                      Console.WriteLine("Jeli {0} prisutna?",polaznici[i]);
+                  var polaznik=polaznici[i];
+                      ConsoleKeyInfo van = Console.ReadKey();
+                      if (van.Key == ConsoleKey.F)//ako nisu kliknemo f false i izbriše ih
+                      {
+                          polaznici.Remove(polaznik);
+                      //polaznici.RemoceAt(i);
+                      /*Brišemo Marka u svakoj
+                       * Standard     ReamoveAt(i)     Remove(obj)    
+                       1 Marko        Ivana             -----  
+                       2 Ivana        Pero             Ivana   
+                       3 pero                          Pero   
+
+                      }
+                  }
+               //ponovno koliko ih ima
+                  Console.WriteLine("Imamo {0} polaznika u seminaru, a prisutni polaznici su: ", polaznici.Count);
+              //ispis prisutnih
+                  for (int i = 0; i < polaznici.Count; i++)
+                  {
+                      Console.Write( polaznici[i]+", ");
+
+                  }
+            */
+
+
+
+
+            //5 radi
+            /*int ocjna = 0;
+            Console.WriteLine("Upiši broj predmeta: ");
+            int brojPredmeta = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= brojPredmeta; i++)
             {
-                Console.WriteLine("Upiši ime {0} polaznika: ",i);
-                polaznici.Add(Console.ReadLine());
+                Console.WriteLine("Upiši ocjenu za {0} predmet: ", i);
+                ocjna += int.Parse(Console.ReadLine());
             }
-            //koliko sad ima polaznika
-                Console.WriteLine("Imamo {0} polaznika u seminaru, a polaznici su: ", polaznici.Count);
-            //Prolazimo kroz sve polaznike i gledamo dali su prisutni
-                for (int i = 0; i < polaznici.Count; i++)
+            Console.WriteLine("Zbroj ocjena je: {0}", ocjna);
+            double prosjek = ocjna / brojPredmeta;
+            Console.WriteLine("Prosjek ocjena je: {0}", prosjek);
+            */
+
+
+            //------------------------------------------------------------------------
+            //26.03.2026
+            /*
+             1.Petlja koja uspoređuje nizove životinja
+            2.Prikažite obrazac poput piramide s brojevima uvećanima za 1
+            3.Poredaj unešeni niz u rastućem redosljedu
+            4.Ispis naprednih brojeva koji su veći od 1,a manji od 20
+            5.Ispis brojeva iz intervala [1,300] koji su djeljivi sa pet
+
+             */
+            //1 radi
+            /*string[] zivotinjaA = { "kornjača", "mačka", "miš" };
+            string[] zivotinjaB = { "pas", "mačka", "miš" };
+            List<string> iste=new List<string>();
+            foreach (var a in zivotinjaA) 
+            { 
+                foreach(var b in zivotinjaB)
                 {
-                    Console.WriteLine("Jeli {0} prisutna?",polaznici[i]);
-                var polaznik=polaznici[i];
-                    ConsoleKeyInfo van = Console.ReadKey();
-                    if (van.Key == ConsoleKey.F)//ako nisu kliknemo f false i izbriše ih
-                    {
-                        polaznici.Remove(polaznik);
-                    //polaznici.RemoceAt(i);
-                    /*Brišemo Marka u svakoj
-                     * Standard     ReamoveAt(i)     Remove(obj)    
-                     1 Marko        Ivana             -----  
-                     2 Ivana        Pero             Ivana   
-                     3 pero                          Pero   
-                     */
-                    }
+                    if(a == b) { iste.Add(b); }
                 }
-             //ponovno koliko ih ima
-                Console.WriteLine("Imamo {0} polaznika u seminaru, a prisutni polaznici su: ", polaznici.Count);
-            //ispis prisutnih
-                for (int i = 0; i < polaznici.Count; i++)
+            }
+            foreach (var i in iste)
+            { 
+                Console.WriteLine(i);
+            }*/
+            //2 radi
+            
+            Console.WriteLine("Upiši broj ponavljanja:");
+            int max= int.Parse(Console.ReadLine());
+           List<int> lista = new List<int>();
+            for (int i = 1; i <= max; i++) 
+            {
+                lista.Add(i);
+                foreach(var x in lista)
                 {
-                    Console.Write( polaznici[i]+", ");
+                   
+                    Console.Write(x);
                     
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                //5 radi
-                /*int ocjna = 0;
-                Console.WriteLine("Upiši broj predmeta: ");
-                int brojPredmeta = int.Parse(Console.ReadLine());
-
-                for (int i = 1; i <= brojPredmeta; i++)
+                Console.Write("\n");
+            }
+            //3
+           /* int[] niz = {2,5,8,1,6 };
+            /* niz.Sort();
+             foreach (int i in niz) {
+                 Console.WriteLine(i);
+             }
+            for (int i = 0; i < niz.Length; i++) 
+            {
+                for (int j = 0; j < niz.Length; j++)
                 {
-                    Console.WriteLine("Upiši ocjenu za {0} predmet: ", i);
-                    ocjna += int.Parse(Console.ReadLine());
+                    if (niz[i] < niz[j])
+                    {
+                        int temp = niz[i];
+                        niz[i] = niz[j];
+                        niz [j] = temp;
+
+                    }
                 }
-                Console.WriteLine("Zbroj ocjena je: {0}", ocjna);
-                double prosjek = ocjna / brojPredmeta;
-                Console.WriteLine("Prosjek ocjena je: {0}", prosjek);
-                */
+            }
+            foreach (int i in niz)
+            {
+                Console.WriteLine(i);
+            }*/
+            //4 radi
+            /*
+            for (int i = 1; i <= 20; i++)
+            {
+                if (i % 2 == 0 && i != 2)
+                {
+                    Console.Write(", " + i);
+                }
+                else if (i % 2 == 0 && i == 2) { Console.Write(i); }
 
+            }*/
+            //5 radi
+            /*
+             for (int i = 1; i <= 300; i++) 
+             {
+                 if (i % 5 == 0 &&i!=5)
+                 {
+                     Console.Write(", "+i);
+                 }
+                 else if(i % 5 == 0 && i == 5) {  Console.Write(i); }
 
-
-
-            
+             }*/
         }
     }
 }
