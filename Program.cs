@@ -7,6 +7,7 @@ namespace AlgebraZadaci
         static void Main(string[] args)
         {
             //projekt za izradu zadataka
+            #region 19.03
             /*
              * CIKLIČNE PETLJE:
              * TURA 1:
@@ -100,7 +101,9 @@ namespace AlgebraZadaci
                       posebnzi++;
                   }
               }*/
+            #endregion
             //----------------------------------------------------------------------------------
+            #region 24.3
             //24.03.2026
             /*
              1.kopirajte jedan niz u drugi niz, uz unos pojedinih riječi, sastavljene rečenica
@@ -234,8 +237,9 @@ namespace AlgebraZadaci
             Console.WriteLine("Prosjek ocjena je: {0}", prosjek);
             */
 
-
+            #endregion
             //------------------------------------------------------------------------
+            #region 26.03
             //26.03.2026
             /*
              1.Petlja koja uspoređuje nizove životinja
@@ -261,7 +265,7 @@ namespace AlgebraZadaci
                 Console.WriteLine(i);
             }*/
             //2 radi
-            
+            /*
             Console.WriteLine("Upiši broj ponavljanja:");
             int max= int.Parse(Console.ReadLine());
            List<int> lista = new List<int>();
@@ -275,30 +279,46 @@ namespace AlgebraZadaci
                     
                 }
                 Console.Write("\n");
-            }
-            //3
-           /* int[] niz = {2,5,8,1,6 };
-            /* niz.Sort();
-             foreach (int i in niz) {
-                 Console.WriteLine(i);
-             }
-            for (int i = 0; i < niz.Length; i++) 
-            {
-                for (int j = 0; j < niz.Length; j++)
-                {
-                    if (niz[i] < niz[j])
-                    {
-                        int temp = niz[i];
-                        niz[i] = niz[j];
-                        niz [j] = temp;
-
-                    }
-                }
-            }
-            foreach (int i in niz)
-            {
-                Console.WriteLine(i);
             }*/
+            //3
+            /* int[] niz = {2,5,8,1,6 };
+             /* niz.Sort();
+              foreach (int i in niz) {
+                  Console.WriteLine(i);
+              }
+             for (int i = 0; i < niz.Length; i++) 
+             {
+
+                 for (int j = 0; j < niz.Length; j++)
+                 {
+
+                     int iVar = niz[i];
+                     int jVar = niz[j];
+                     if (iVar < jVar)
+                     {
+
+                         int temp = niz[j];
+                         niz[j] = niz[i];
+                         niz [i] = temp;
+
+                     }
+                 }
+             }
+             foreach (int i in niz)
+             {
+                 Console.WriteLine(i);
+             }*/
+            /*
+             * Korak	i	j	Uvjet	Novi niz
+                1	0	1	2 < 5	[5, 2, 8, 1, 6]
+                2	0	2	5 < 8	[8, 2, 5, 1, 6]
+                3	1	0	2 < 8	[2, 8, 5, 1, 6]
+                4	2	1	5 < 8	[2, 5, 8, 1, 6]
+                5	3	0	1 < 2	[1, 5, 8, 2, 6]
+                6	3	1	2 < 5	[1, 2, 8, 5, 6]
+                7	3	2	5 < 8	[1, 2, 5, 8, 6]
+                8	4	3	6 < 8	[1, 2, 5, 6, 8]
+             */
             //4 radi
             /*
             for (int i = 1; i <= 20; i++)
@@ -321,6 +341,106 @@ namespace AlgebraZadaci
                  else if(i % 5 == 0 && i == 5) {  Console.Write(i); }
 
              }*/
+            #endregion
+
+            #region 31.3
+            /*
+             1.Primjer metode koja broji razmake izmešu riječi. Unos nekoliko rečenica.
+            2.Primjer metode koja barata sa kolekcijama za ispis riječi u rečenici obrnuto.
+            4. Primjer metode za zamjenu mjesta najvećeg i najmanjeg broja
+            5.Primjer metode koja određuje da li je broj djeljiv sa nekim brojem
+             */
+            //1 radi
+            /* Console.WriteLine("Upiši rečenicu:");
+             string recenica=Console.ReadLine();
+             BrojanjeRazmakaUnutarRecenice(recenica);*/
+            //2 radi
+            /* List<string> rijeci=new List<string>();
+              rijeci.Add("Ovo");
+              rijeci.Add("je");
+              rijeci.Add("Ivin");
+              rijeci.Add("Projekt");
+              rijeci.Add("!");
+              IspisRijeciObrnuto(rijeci);*/
+            //4radi
+            /*  List<int> lista= new List<int>();
+              lista.Add(1);
+              lista.Add(5);
+              lista.Add(7);
+              lista.Add(4);
+              lista.Add(10);
+              List<int> result= new List<int>();
+              result=MetodaZaZamjenuMjestaBroja(lista);
+              foreach (int i in result) 
+              {
+                  Console.WriteLine(i);
+              }
+            */
+            //5
+            Console.WriteLine("Upiši broj:");
+            int broj = int.Parse(Console.ReadLine());
+            Console.WriteLine("Upiši djeljitelj:");
+            int djeljitelj = int.Parse(Console.ReadLine());
+            DaliJeBrojDjeljiv(broj, djeljitelj);
+            #endregion
+        }
+        static void BrojanjeRazmakaUnutarRecenice(string recenica)
+        {
+            int brojac = 0;
+            for(int i = 0; i < recenica.Length; i++)
+            {
+                if (recenica[i]== ' ')
+                {
+                    brojac++;
+                }
+            }
+            Console.WriteLine("Broj ponavljanja: " + brojac);
+        }
+        static void IspisRijeciObrnuto(List<string> rijeci)
+        {
+            List<string> obrnutaLista=new List<string>();
+            for(int i=rijeci.Count-1; i>=0; i--)
+            {
+                obrnutaLista.Add(rijeci[i]);
+            }
+            foreach(var l in obrnutaLista)
+            {
+                Console.WriteLine(l);
+            }
+        }
+        static List<int> MetodaZaZamjenuMjestaBroja(List<int> list)
+        {
+            List<int> result = new List<int>();
+            result = list;
+           
+            
+              int maxValue= result.Max();
+              int minValue= result.Min();
+           for(int i = 0; i < list.Count; i++)
+            {
+                if (list[i] == minValue)
+                {
+                    result[i] = maxValue;
+                }
+                else if (list[i] == maxValue)
+                {
+                    result[i] = minValue;
+                }
+            }
+                
+            
+            return result;
+        }
+        static void DaliJeBrojDjeljiv(int broj, int djelitelj)
+        {
+            if (broj % djelitelj == 0)
+            {
+                Console.WriteLine($"{broj} je djeljiv sa {djelitelj}.");
+            }
+            else
+            {
+                Console.WriteLine($"{broj} je djeljiv sa {djelitelj}.");
+            }
         }
     }
 }
