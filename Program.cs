@@ -347,8 +347,8 @@ namespace AlgebraZadaci
             /*
              1.Primjer metode koja broji razmake izmešu riječi. Unos nekoliko rečenica.
             2.Primjer metode koja barata sa kolekcijama za ispis riječi u rečenici obrnuto.
-            4. Primjer metode za zamjenu mjesta najvećeg i najmanjeg broja
-            5.Primjer metode koja određuje da li je broj djeljiv sa nekim brojem
+            3. Primjer metode za zamjenu mjesta najvećeg i najmanjeg broja
+            4.Primjer metode koja određuje da li je broj djeljiv sa nekim brojem
              */
             //1 radi
             /* Console.WriteLine("Upiši rečenicu:");
@@ -362,28 +362,137 @@ namespace AlgebraZadaci
               rijeci.Add("Projekt");
               rijeci.Add("!");
               IspisRijeciObrnuto(rijeci);*/
-            //4radi
-            /*  List<int> lista= new List<int>();
-              lista.Add(1);
-              lista.Add(5);
-              lista.Add(7);
-              lista.Add(4);
-              lista.Add(10);
-              List<int> result= new List<int>();
-              result=MetodaZaZamjenuMjestaBroja(lista);
-              foreach (int i in result) 
-              {
-                  Console.WriteLine(i);
-              }
-            */
-            //5
-            Console.WriteLine("Upiši broj:");
+            //4
+            /*Console.WriteLine("Upiši broj:");
             int broj = int.Parse(Console.ReadLine());
             Console.WriteLine("Upiši djeljitelj:");
             int djeljitelj = int.Parse(Console.ReadLine());
             DaliJeBrojDjeljiv(broj, djeljitelj);
+           */
+
+
+            //3. radi
+            /*   List<int> list = new List<int>();
+                   list.Add(1);
+                   list.Add(5);
+                   list.Add(7);
+                   list.Add(4);
+                   list.Add(10);
+                 List<int> result= new List<int>();
+                 result= ReplaceNumberPlaces(list);
+                 foreach (int i in result) 
+                 {
+                     Console.WriteLine(i);
+                 }*/
+            #endregion
+            #region 2.4
+            /*
+             1. Primjer istoimene metode sa različitim tipovima podataka i/ili parametrima
+             2. Primjer metode koja otkriva da li je neka riječ palindrom(isto se piše odostraga
+             3. Primjer rekurzivne metode za iscrtavanje obiteljskog stabla
+             */
+            //1
+            /*
+            IstoimenaMetoda(word: "Pero");
+            IstoimenaMetoda(1, 2);
+            IstoimenaMetoda(1F, 3F);
+            */
+            //2
+           /* string word = "iva";
+            IsTheWordPalindrome(word);*/
+            //3
+            FamilyTree("pero", 3);
             #endregion
         }
+        //1.
+        static void IstoimenaMetoda(string word) 
+        {
+            Console.WriteLine(word);
+        }
+        static void IstoimenaMetoda(int a, int b)
+        {
+            Console.WriteLine(a+b);
+        }
+        static float IstoimenaMetoda(float a, float b)
+        {
+            return a + b;
+        }
+        //2.
+        static void IsTheWordPalindrome(string word)
+        {
+            char element=' ';
+           
+            for (int i = word.Length - 1; i >= 0; i--) 
+            {
+                element = word[i];
+                
+            }
+            Console.WriteLine(element);
+        }
+        //3.
+        //name - ime prve osobe u stablu
+        
+        static void FamilyTree(string name,int nuberofbranches)
+        {
+            List<string> list = new List<string>();
+            List<int> numberOfPeople= new List<int>();
+            do
+            {
+               
+                Console.WriteLine("Broj rodbine: ");
+                int numberOfAncesstors = int.Parse(Console.ReadLine());
+                numberOfPeople.Add(numberOfAncesstors);
+                for (int i = 0; i < numberOfAncesstors; i++)
+                {
+                    Console.WriteLine("Upiši ime osobe: ");
+                    string nameOfAncesstor = Console.ReadLine();
+                    list.Add(nameOfAncesstor);
+                }
+                nuberofbranches--;
+
+            }
+            while (nuberofbranches > 0);
+           
+            int offset = 0;
+
+            Console.Write(name+"\n");
+            
+            for (int i=0; i < numberOfPeople.Count; i++)
+            {
+                for (int j = 0; j < numberOfPeople[i]; j++)
+                {   
+                        Console.Write(" ");
+                    
+                    Console.Write(list[offset + j] + " ");
+                }
+                offset += numberOfPeople[i];
+                Console.WriteLine();
+            }
+            
+        }
+        //3
+        static List<int> ReplaceNumberPlaces(List<int> list)
+        {
+            List<int> result = new List<int>();
+            result = list;
+            int maxValue = result.Max();
+            int minValue = result.Min();
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i] == minValue)
+                {
+                    result[i] = maxValue;
+                }
+                else if (list[i] == maxValue)
+                {
+                    result[i] = minValue;
+                }
+            }
+
+
+            return result;
+        }
+        //1
         static void BrojanjeRazmakaUnutarRecenice(string recenica)
         {
             int brojac = 0;
@@ -396,6 +505,7 @@ namespace AlgebraZadaci
             }
             Console.WriteLine("Broj ponavljanja: " + brojac);
         }
+        //2
         static void IspisRijeciObrnuto(List<string> rijeci)
         {
             List<string> obrnutaLista=new List<string>();
@@ -408,29 +518,7 @@ namespace AlgebraZadaci
                 Console.WriteLine(l);
             }
         }
-        static List<int> MetodaZaZamjenuMjestaBroja(List<int> list)
-        {
-            List<int> result = new List<int>();
-            result = list;
-           
-            
-              int maxValue= result.Max();
-              int minValue= result.Min();
-           for(int i = 0; i < list.Count; i++)
-            {
-                if (list[i] == minValue)
-                {
-                    result[i] = maxValue;
-                }
-                else if (list[i] == maxValue)
-                {
-                    result[i] = minValue;
-                }
-            }
-                
-            
-            return result;
-        }
+        //4
         static void DaliJeBrojDjeljiv(int broj, int djelitelj)
         {
             if (broj % djelitelj == 0)
@@ -441,6 +529,15 @@ namespace AlgebraZadaci
             {
                 Console.WriteLine($"{broj} je djeljiv sa {djelitelj}.");
             }
+        }
+        static List<int> GenarateNumersInRange(int start, int end, int iterator)
+        {
+            List<int> numberList=new List<int>();
+            for(int i = 0; i <= iterator; i++)
+            {
+                numberList.Add(new Random().Next(start,end));
+            }
+            return numberList;
         }
     }
 }
