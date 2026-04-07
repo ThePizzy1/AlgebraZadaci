@@ -102,7 +102,6 @@ namespace AlgebraZadaci
                   }
               }*/
             #endregion
-            //----------------------------------------------------------------------------------
             #region 24.3
             //24.03.2026
             /*
@@ -238,7 +237,6 @@ namespace AlgebraZadaci
             */
 
             #endregion
-            //------------------------------------------------------------------------
             #region 26.03
             //26.03.2026
             /*
@@ -342,7 +340,6 @@ namespace AlgebraZadaci
 
              }*/
             #endregion
-
             #region 31.3
             /*
              1.Primjer metode koja broji razmake izmešu riječi. Unos nekoliko rečenica.
@@ -403,6 +400,10 @@ namespace AlgebraZadaci
             //3
             FamilyTree("pero", 3);
             #endregion
+            #region 7.4
+
+
+            #endregion
         }
         //1.
         static void IstoimenaMetoda(string word) 
@@ -431,7 +432,6 @@ namespace AlgebraZadaci
         }
         //3.
         //name - ime prve osobe u stablu
-        
         static void FamilyTree(string name,int nuberofbranches)
         {
             List<string> list = new List<string>();
